@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Your Well-being</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    #container {
+        margin-top: 100px;
+    }
+    h1 {
+        color: #333;
+    }
+    input[type="text"] {
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <h1>How are you feeling?</h1>
+    <input type="text" id="feelingInput" placeholder="Enter your feelings here...">
+    <button onclick="checkWellBeing()">Check</button>
+    <div id="result"></div>
+</div>
+
+<script>
+function checkWellBeing() {
+    var feeling = document.getElementById('feelingInput').value.toLowerCase();
+    var resultDiv = document.getElementById('result');
+
+    if (feeling.includes('good') || feeling.includes('fine') || feeling.includes('great')) {
+        resultDiv.innerHTML = "You seem to be doing well! Keep it up!";
+    } else if (feeling.includes('sad') || feeling.includes('down') || feeling.includes('depressed')) {
+        resultDiv.innerHTML = "You might be feeling low. Remember, it's okay to reach out for support.";
+    } else if (feeling.includes('stressed') || feeling.includes('anxious') || feeling.includes('worried')) {
+        resultDiv.innerHTML = "Feeling stressed or anxious? Try some relaxation techniques like deep breathing or meditation.";
+    } else {
+        resultDiv.innerHTML = "Your feelings are important. If you're not feeling well, consider talking to someone you trust.";
+    }
+}
+</script>
+
+</body>
+</html>
